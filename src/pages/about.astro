@@ -1,10 +1,32 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
+
+const anim = {
+	old: {
+		name: "fadeIn",
+		duration: "2s",
+		easing: "linear",
+		fillMode: "forwards",
+	},
+	new: {
+		name: "fadeOut",
+		duration: "3s",
+		easing: "linear",
+		fillMode: "backwards",
+	},
+};
+
+const myFade = {
+	forwards: anim,
+	backwards: anim,
+};
 ---
 
 <Layout
 	title="About Me"
 	description="Lorem ipsum dolor sit amet"
+	transition:name="layout"
+	transition:animate={myFade}
 	pubDate={new Date('August 08 2021')}
 	heroImage="/blog-placeholder-about.jpg"
 >
